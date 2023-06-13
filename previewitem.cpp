@@ -1,6 +1,11 @@
 #include "previewitem.h"
 
-PreviewItem::PreviewItem()
+PreviewItem::PreviewItem(QString str) :QListWidgetItem(str)
 {
+
+}
+
+
+PreviewItem::~PreviewItem(){
 
 }

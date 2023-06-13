@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QBoxLayout>
+#include <QStackedLayout>
+#include <QListWidget>
+#include <previewitem.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,10 +21,20 @@ public:
 
 private slots:
     void openFileButtonClick();
+    void onClickListItem(QListWidgetItem *item);
+    void onClickPreviousImage();
+    void onClickNextImage();
 
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *layout;
+    QWidget *openView;
+    QWidget *scanView;
+    QLabel *imageView;
+    QListWidget *listWidget;
+    QStackedLayout *stack;
+    QStringList fileNames;
+    int selectRow;
     void createMainView();
 };
 #endif // MAINWINDOW_H

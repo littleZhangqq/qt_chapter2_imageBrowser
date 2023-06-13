@@ -1,12 +1,20 @@
 #ifndef PREVIEWITEM_H
 #define PREVIEWITEM_H
 
+#include <QListWidgetItem>
+#include <QBoxLayout>
+#include <QLabel>
 
-class PreviewItem
+class PreviewItem :public QListWidgetItem
 {
-    Q_OBJECT
+
+private:
+
 public:
-    PreviewItem();
+    PreviewItem(QString str);
+    ~PreviewItem();
+    int index = 0;
+    QString path;
 };
 
 #endif // PREVIEWITEM_H
